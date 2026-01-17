@@ -290,16 +290,8 @@ texture = ExtResource("2_wjbj4")
 
 [sub_resource type="TileSet" id="TileSet_5nqew"]
 physics_layer_0/collision_layer = 1
-<<<<<<< HEAD
-<<<<<<< HEAD
-custom_data_layer_0/name = "ice"
-custom_data_layer_0/type = 3
-=======
 custom_data_layer_0/name = "Type"
 custom_data_layer_0/type = 4
->>>>>>> 4f8dc2e3cfb5b9d17cfdf9884992d8e578418c89
-=======
->>>>>>> parent of 587b701 (Added friction)
 sources/0 = SubResource("TileSetAtlasSource_e0whc")
 
 [sub_resource type="Animation" id="Animation_nouhc"]
