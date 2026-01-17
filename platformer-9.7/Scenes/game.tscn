@@ -171,6 +171,8 @@ texture = ExtResource("2_wjbj4")
 
 [sub_resource type="TileSet" id="TileSet_5nqew"]
 physics_layer_0/collision_layer = 1
+custom_data_layer_0/name = "ice"
+custom_data_layer_0/type = 3
 sources/0 = SubResource("TileSetAtlasSource_e0whc")
 
 [sub_resource type="Animation" id="Animation_nouhc"]
