@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://gplrvfm4y4fs"]
 
-[ext_resource type="Script" path="res://Scripts/game.gd" id="1_lh3wk"]
+[ext_resource type="Script" uid="uid://d31sd0wdxy6au" path="res://Scripts/game.gd" id="1_lh3wk"]
 [ext_resource type="PackedScene" uid="uid://cyloytuj5n6c6" path="res://Scenes/player.tscn" id="1_r10ha"]
 [ext_resource type="Texture2D" uid="uid://b72bq8gbfg744" path="res://Assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_wjbj4"]
 [ext_resource type="FontFile" uid="uid://c7pmd5jx0wth6" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="3_6o6lw"]
@@ -207,8 +207,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uqy32"]
 _data = {
-"Platform_Move": SubResource("Animation_nouhc"),
-"RESET": SubResource("Animation_7k6mm")
+&"Platform_Move": SubResource("Animation_nouhc"),
+&"RESET": SubResource("Animation_7k6mm")
 }
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_c583d"]
@@ -220,6 +220,17 @@ size = Vector2(310.408, 339.284)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lh3wk")
 
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = -21.0
+offset_top = -73.0
+offset_right = 21.0
+offset_bottom = -49.0
+theme = SubResource("Theme_4tc4b")
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("1_r10ha")]
 position = Vector2(-1, 3)
 
@@ -228,17 +239,6 @@ position = Vector2(-4, 0)
 zoom = Vector2(4, 4)
 limit_bottom = 300
 limit_smoothed = true
-
-[node name="Label" type="Label" parent="Player/Camera2D"]
-z_index = 2
-offset_left = -16.0
-offset_top = -76.0
-offset_right = 26.0
-offset_bottom = -52.0
-theme = SubResource("Theme_4tc4b")
-text = "60"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, -15)
@@ -255,7 +255,7 @@ position = Vector2(879, 135)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_uqy32")
+&"": SubResource("AnimationLibrary_uqy32")
 }
 autoplay = "Platform_Move"
 
