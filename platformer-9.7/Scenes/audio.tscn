@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://brnkr5y2edowo"]
+
+[ext_resource type="Script" path="res://Scripts/audio.gd" id="1_1usw3"]
+[ext_resource type="AudioStream" uid="uid://blnsari2e8bgc" path="res://Assets/Menu Selection Click.wav" id="2_3fhvl"]
+[ext_resource type="AudioStream" uid="uid://crantdmhrn346" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="3_7awc1"]
+
+[sub_resource type="GDScript" id="GDScript_0ml8w"]
+script/source = "extends AudioStreamPlayer2D
+
+func _ready() -> void:
+	$Background"
+
+[node name="Audio" type="Node2D"]
+script = ExtResource("1_1usw3")
+
+[node name="Blip" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3fhvl")
+volume_db = 13.0
+
+[node name="Background" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7awc1")
+volume_db = 5.0
+script = SubResource("GDScript_0ml8w")
