@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://brnkr5y2edowo"]
 
-[ext_resource type="Script" path="res://Scripts/audio.gd" id="1_1usw3"]
+[ext_resource type="Script" uid="uid://bscj2hm7nnuqi" path="res://Scripts/audio.gd" id="1_1usw3"]
 [ext_resource type="AudioStream" uid="uid://blnsari2e8bgc" path="res://Assets/Menu Selection Click.wav" id="2_3fhvl"]
 [ext_resource type="AudioStream" uid="uid://crantdmhrn346" path="res://Assets/brackeys_platformer_assets/music/time_for_adventure.mp3" id="3_7awc1"]
 
@@ -8,7 +8,8 @@
 script/source = "extends AudioStreamPlayer2D
 
 func _ready() -> void:
-	$Background"
+	$Background
+"
 
 [node name="Audio" type="Node2D"]
 script = ExtResource("1_1usw3")
