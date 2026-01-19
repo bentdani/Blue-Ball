@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyloytuj5n6c6"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_753v5"]
+[ext_resource type="Script" uid="uid://ua3khhp1nhr3" path="res://Scripts/player.gd" id="1_753v5"]
 [ext_resource type="Texture2D" uid="uid://1upjjdeunwev" path="res://Assets/Black-Circle-PNG-File.png" id="1_vx401"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vfspn"]
