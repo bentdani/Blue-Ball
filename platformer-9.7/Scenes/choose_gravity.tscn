@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgepa1ri5datf"]
+
+[ext_resource type="Script" uid="uid://c6xhq1tpncfkx" path="res://Scenes/choose_gravity.gd" id="1_5p1x0"]
+[ext_resource type="Theme" uid="uid://bc237lymtagr2" path="res://Themes/normal_button.tres" id="1_duql3"]
+[ext_resource type="Theme" uid="uid://dmtpgtsw3xg0r" path="res://Themes/title.tres" id="2_5p1x0"]
+[ext_resource type="FontFile" uid="uid://61vtpscsa6pv" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="3_l3e51"]
+
+[node name="Choose_Gravity" type="Node2D"]
+script = ExtResource("1_5p1x0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.75, 16.205128)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Mars" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = -124.0
+offset_right = 354.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0137674, 1)
+theme = ExtResource("1_duql3")
+text = "[Mars]"
+
+[node name="Earth" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = 26.0
+offset_right = 354.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9967213, 1)
+theme = ExtResource("1_duql3")
+text = "[Earth]"
+
+[node name="Moon" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -346.0
+offset_top = 176.0
+offset_right = 354.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.006625, 1.0042669)
+theme = ExtResource("1_duql3")
+text = "[Moon]"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -510.0
+offset_top = -314.0
+offset_right = 510.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.0223017, 1.1143225)
+theme = ExtResource("2_5p1x0")
+theme_override_fonts/font = ExtResource("3_l3e51")
+theme_override_font_sizes/font_size = 80
+text = "  Choose Your 
+      Gravity"
+
+[connection signal="button_down" from="Control/Mars" to="." method="_on_mars_button_down"]
+[connection signal="button_down" from="Control/Earth" to="." method="_on_earth_button_down"]
+[connection signal="button_down" from="Control/Moon" to="." method="_on_moon_button_down"]

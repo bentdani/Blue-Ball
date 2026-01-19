@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ca80slfhr535x"]
+[gd_scene load_steps=8 format=3 uid="uid://ca80slfhr535x"]
 
-[ext_resource type="Script" path="res://Scripts/gameover.gd" id="1_3pvx5"]
-[ext_resource type="Texture2D" uid="uid://b70abvf0vtsue" path="res://Assets/images.png" id="1_eivvs"]
+[ext_resource type="Script" uid="uid://dk34qf4wtq6b1" path="res://Scripts/gameover.gd" id="1_3pvx5"]
 [ext_resource type="Theme" uid="uid://dmtpgtsw3xg0r" path="res://Themes/title.tres" id="2_3x2uv"]
 [ext_resource type="Theme" uid="uid://bc237lymtagr2" path="res://Themes/normal_button.tres" id="3_g7frb"]
 [ext_resource type="FontFile" uid="uid://61vtpscsa6pv" path="res://Assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_u2dtq"]
@@ -40,8 +39,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_by4u1"]
 _data = {
-"RESET": SubResource("Animation_jpi7m"),
-"new_animation": SubResource("Animation_yl8jx")
+&"RESET": SubResource("Animation_jpi7m"),
+&"new_animation": SubResource("Animation_yl8jx")
 }
 
 [node name="Gameover" type="Node2D"]
@@ -53,11 +52,12 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = ExtResource("1_eivvs")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.875473, 16.1963)
+color = Color(0.47843137, 0.9843137, 1, 1)
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 1
@@ -113,7 +113,7 @@ text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_by4u1")
+&"": SubResource("AnimationLibrary_by4u1")
 }
 autoplay = "new_animation"
 
