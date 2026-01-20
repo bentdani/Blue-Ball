@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var acceleration = 2000.0
+var acceleration = 900.0
 var max_speed = 150.0
 const JUMP_VELOCITY = -300.0
 
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
-		velocity.x = move_toward(velocity.x, direction * 999, acceleration * delta)
+		velocity.x = move_toward(velocity.x, direction * max_speed, acceleration * delta)
 	
 	# Gradually decrease velocity with friction
 	# Scale friction based on gravity strength
