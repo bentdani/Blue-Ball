@@ -21,6 +21,8 @@ func check_if_on_ice() -> bool:
 func _physics_process(delta: float) -> void:	
 	if check_if_on_ice():
 		friction = 0.01
+	else:
+		friction = 2.0
 	# Read the gravity from the Stats
 	var gravity = Stats.gravity
 	
