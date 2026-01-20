@@ -26,6 +26,7 @@ func _on_timer_2_timeout() -> void:
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	# hit the flag
 	Stats.winner = "You Win!"
 	get_parent().add_child(gameOver.instantiate())
 	queue_free()
