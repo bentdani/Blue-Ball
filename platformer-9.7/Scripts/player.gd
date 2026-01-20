@@ -6,7 +6,21 @@ var max_speed = 150.0
 const JUMP_VELOCITY = -300.0
 
 
-func _physics_process(delta: float) -> void:
+
+func check_if_on_ice() -> bool:
+	if is_on_floor():
+# Get the tile position under the player
+		var floor_pos = get_parent().get_node("Main").local_to_map(global_position + Vector2(0, 5))
+# Look up the "is_ice" data we created
+		var data = get_parent().get_node("Main").get_cell_tile_data(floor_pos)
+
+		if data:
+			return data.get_custom_data("is_ice")
+	return false
+
+func _physics_process(delta: float) -> void:	
+	if check_if_on_ice():
+		friction = 0.01
 	# Read the gravity from the Stats
 	var gravity = Stats.gravity
 	
