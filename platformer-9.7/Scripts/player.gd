@@ -41,7 +41,8 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("Left", "Right")
-	velocity.x = move_toward(velocity.x, direction * max_speed, acceleration * delta)
+	if direction:
+		velocity.x = move_toward(velocity.x, direction * 999, acceleration * delta)
 	
 	# Gradually decrease velocity with friction
 	# Scale friction based on gravity strength
