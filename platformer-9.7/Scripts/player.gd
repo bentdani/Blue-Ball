@@ -1,27 +1,32 @@
 extends CharacterBody2D
 
 var acceleration = 2000.0
-var friction = 2.0
 var max_speed = 150.0
 const JUMP_VELOCITY = -300.0
+
+var surface_frictions = {
+	"ice": 0.01,
+	"normal": 2.0
+}
+var friction = surface_frictions["normal"]
 
 
 func check_if_on_ice() -> bool:
 	if is_on_floor():
-# Get the tile position under the player
+		# Get the tile position under the player
 		var floor_pos = get_parent().get_node("Main").local_to_map(global_position + Vector2(0, 5))
-# Look up the "is_ice" data we created
 		var data = get_parent().get_node("Main").get_cell_tile_data(floor_pos)
 
 		if data:
 			return data.get_custom_data("is_ice")
 	return false
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
 	if check_if_on_ice():
-		friction = 0.01
+		friction = surface_frictions["ice"]
 	else:
-		friction = 2.0
+		friction = surface_frictions["normal"]
+	
 	# Read the gravity from the Stats
 	var gravity = Stats.gravity
 	
