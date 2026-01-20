@@ -11,6 +11,7 @@
 default_font = ExtResource("3_6o6lw")
 default_font_size = 16
 Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 32
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0whc"]
 texture = ExtResource("2_wjbj4")
@@ -230,9 +231,10 @@ z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -14.0
-offset_right = 14.0
-offset_bottom = 16.0
+offset_left = -28.0
+offset_top = 8.0
+offset_right = 28.0
+offset_bottom = 40.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -249,6 +251,7 @@ position = Vector2(-4, 0)
 zoom = Vector2(4, 4)
 limit_bottom = 300
 limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="Main" type="TileMapLayer" parent="."]
 z_index = 5

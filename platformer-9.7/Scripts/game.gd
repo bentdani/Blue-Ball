@@ -7,12 +7,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	Stats.winner = "You Lose!"
 
 func _on_timer_timeout() -> void:
+	# Wait before triggering the win once the player has touched the flag
 	get_parent().add_child(gameOver.instantiate())
 	queue_free()
 
 func _ready() -> void:
 	$UI/Label.text = str(20)
-
 
 func _on_timer_2_timeout() -> void:
 	var labelint = int($UI/Label.text)
