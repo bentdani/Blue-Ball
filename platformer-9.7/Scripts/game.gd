@@ -1,6 +1,7 @@
 extends Node2D
 
 var gameOver = load("res://Scenes/gameover.tscn")
+var time_left = 20
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	$Timer.start()
@@ -11,18 +12,23 @@ func _on_timer_timeout() -> void:
 	get_parent().add_child(gameOver.instantiate())
 	queue_free()
 
+func update_time(time: float) -> void:
+	$UI/Label.text = "Time Left: " + str(round(time * 10) / 10 ) + "s"
+
 func _ready() -> void:
-	$UI/Label.text = str(20)
+	# init the displayed time
+	update_time(time_left)
 
 func _on_timer_2_timeout() -> void:
-	var labelint = int($UI/Label.text)
-	if $UI/Label.text == "0":
+	# triggers once a second
+	time_left -= 0.1
+	update_time(time_left)
+	
+	# check if we have time left
+	if time_left <= 0:
 		Stats.winner = "You Lose!"
 		get_parent().add_child(gameOver.instantiate())
 		queue_free()
-	else:
-		labelint -= 1
-		$UI/Label.text = str(labelint)
 
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:

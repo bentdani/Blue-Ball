@@ -288,6 +288,7 @@ shape = SubResource("WorldBoundaryShape2D_c583d")
 one_shot = true
 
 [node name="Timer2" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

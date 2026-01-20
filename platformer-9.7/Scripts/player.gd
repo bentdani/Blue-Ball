@@ -6,7 +6,6 @@ var max_speed = 150.0
 const JUMP_VELOCITY = -300.0
 
 
-
 func check_if_on_ice() -> bool:
 	if is_on_floor():
 # Get the tile position under the player
