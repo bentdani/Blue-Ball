@@ -13,7 +13,7 @@ var friction = surface_frictions["normal"]
 
 func check_if_on_ice() -> bool:
 	# Get the tile position under the player
-	var floor_pos = get_parent().get_node("Main").local_to_map(global_position + Vector2(0, 5))
+	var floor_pos = get_parent().get_node("Main").local_to_map(global_position + Vector2(0, 7))
 	var data = get_parent().get_node("Main").get_cell_tile_data(floor_pos)
 	
 	print("data: " + str(data))
