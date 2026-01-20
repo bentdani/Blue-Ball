@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-var acceleration = 1800.0
-var max_speed = 150.0
+var acceleration = 2500.0
+var max_speed = 200.0
 const JUMP_VELOCITY = -300.0
 
 var surface_frictions = {
